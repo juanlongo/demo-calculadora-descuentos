@@ -28,8 +28,15 @@ form { display: grid; gap: .6rem; margin-top: 1.5rem; }
 label { font-weight: 650; }
 input, select, button { border-radius: .5rem; font: inherit; padding: .75rem; }
 input, select { border: 1px solid #bbc4d4; }
-button { border: 0; background: #2d5bd1; color: #fff; cursor: pointer; font-weight: 700; margin-top: .75rem; }
+button { border: 0; background: #2d5bd1; color: #fff; cursor: pointer; font-weight: 700; margin-top: 0; }
 button:hover { background: #244cac; }
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: .75rem;
+}
+.form-actions button { flex: 1 1 12rem; }
 .secondary-button {
   margin-top: 0;
   background: #eef2ff;

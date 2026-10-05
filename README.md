@@ -1,6 +1,6 @@
 # Calculadora de descuentos
 
-Aplicación Kotlin/JVM con una página web para calcular descuentos de una tienda y copiar el total final calculado.
+Aplicación Kotlin/JVM con una página web para calcular descuentos de una tienda, copiar el total final calculado y limpiar el cálculo para empezar de nuevo.
 
 ## Ejecutar
 
