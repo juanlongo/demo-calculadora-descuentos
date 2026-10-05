@@ -22,6 +22,8 @@ class ApplicationTest {
 
         assertEquals(HttpStatusCode.OK, response.status)
         assertTrue(body.contains("Calculadora de descuentos"))
+        assertTrue(body.contains("id=\"clear-calculation\""))
+        assertTrue(body.contains("Limpiar cálculo"))
         assertTrue(body.contains("id=\"copy-total\""))
         assertTrue(body.contains("id=\"copy-feedback\""))
         assertTrue(body.contains("role=\"status\""))
@@ -37,6 +39,9 @@ class ApplicationTest {
         assertEquals(HttpStatusCode.OK, response.status)
         assertTrue(body.contains("navigator.clipboard"))
         assertTrue(body.contains("copyTotalButton"))
+        assertTrue(body.contains("form.addEventListener(\"reset\""))
+        assertTrue(body.contains("resetCalculationUI()"))
+        assertTrue(body.contains("unitPriceInput.focus()"))
         assertTrue(body.contains("Total copiado al portapapeles."))
     }
 

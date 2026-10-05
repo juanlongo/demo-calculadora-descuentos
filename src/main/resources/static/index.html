@@ -24,7 +24,17 @@
         <option value="BULK20">BULK20 — 20% desde 5 unidades</option>
       </select>
 
-      <button type="submit">Calcular total</button>
+      <div class="form-actions">
+        <button type="submit">Calcular total</button>
+        <button
+          id="clear-calculation"
+          class="secondary-button"
+          type="reset"
+          aria-controls="result-container copy-total copy-feedback"
+        >
+          Limpiar cálculo
+        </button>
+      </div>
     </form>
     <section id="result-container" hidden>
       <div class="result-row">

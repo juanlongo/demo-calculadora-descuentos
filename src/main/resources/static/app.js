@@ -1,4 +1,5 @@
 const form = document.querySelector("#discount-form");
+const unitPriceInput = document.querySelector("#unit-price");
 const resultContainer = document.querySelector("#result-container");
 const result = document.querySelector("#result");
 const copyTotalButton = document.querySelector("#copy-total");
@@ -17,6 +18,13 @@ const hideCopyButton = () => {
   copyTotalButton.hidden = true;
   copyTotalButton.dataset.total = "";
   resetCopyFeedback();
+};
+
+const resetCalculationUI = () => {
+  resultContainer.hidden = true;
+  result.className = "result";
+  result.textContent = "";
+  hideCopyButton();
 };
 
 const setCopyFeedback = (type, message) => {
@@ -46,10 +54,14 @@ copyTotalButton.addEventListener("click", async () => {
   }
 });
 
+form.addEventListener("reset", () => {
+  resetCalculationUI();
+  unitPriceInput.focus();
+});
+
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  resultContainer.hidden = true;
-  hideCopyButton();
+  resetCalculationUI();
 
   const formData = new FormData(form);
   const payload = {
