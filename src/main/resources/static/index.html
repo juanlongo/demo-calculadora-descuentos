@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de descuentos</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Calculadora de descuentos</h1>
+    <p class="intro">Calculá el total de tu compra con cupones de la tienda.</p>
+    <form id="discount-form">
+      <label for="unit-price">Precio unitario</label>
+      <input id="unit-price" name="unitPrice" type="number" min="0.01" step="0.01" required placeholder="Ej. 199.99">
+
+      <label for="quantity">Cantidad</label>
+      <input id="quantity" name="quantity" type="number" min="1" step="1" required placeholder="Ej. 5">
+
+      <label for="coupon-code">Cupón <span>(opcional)</span></label>
+      <select id="coupon-code" name="couponCode">
+        <option value="">Sin cupón</option>
+        <option value="WELCOME10">WELCOME10 — 10% de descuento</option>
+        <option value="BULK20">BULK20 — 20% desde 5 unidades</option>
+      </select>
+
+      <button type="submit">Calcular total</button>
+    </form>
+    <section id="result-container" hidden>
+      <div class="result-row">
+        <section id="result" class="result" aria-live="polite"></section>
+        <button id="copy-total" class="secondary-button" type="button" hidden>
+          Copiar total final
+        </button>
+      </div>
+      <p id="copy-feedback" class="copy-feedback" role="status" aria-live="polite" hidden></p>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
